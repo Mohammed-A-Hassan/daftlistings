@@ -2,7 +2,7 @@
     "docs": [
         {
             "location": "/", 
-            "text": "Overview\n\n\nA library that enables programmatic interaction with daft.ie allowing you to retrieve properties by location, sale type, price and property type. daftlistings has been tested on Python 2.7 and Python 3.5.2\n\n\nInstallation\n\n\ndaftlistings is available on the Python Package Index (PyPI) at https://pypi.python.org/pypi/daftlistings\n\n\nYou can install daftlistings using pip.\n\n\nvirtualenv env\nsource env/bin/activate\npip install daftlistings\n\n\n\nDeveloping locally\n\n\nThis library is under active development.\nBefore new versions are pushed to PyPI, you can download the development version to avail of any new features.\n\n\ngit clone https://github.com/AnthonyBloomer/daftlistings.git\ncd daftlistings\nvirtualenv env\nsource env/bin/activate\npip install -r requirements.txt\n\n\n\nExamples\n\n\nGet the current properties for rent in Dublin that are between \u20ac1000 and\n\u20ac1500 per month.\n\n\nfrom daftlistings import Daft, CommercialType, SaleType, RentType\n\ndaft = Daft()\ndaft.set_county('Dublin City')\ndaft.set_area('Dublin 15')\ndaft.set_listing_type(RentType.APARTMENTS)\ndaft.set_min_price(1000)\ndaft.set_max_price(1500)\n\nlistings = daft.get_listings()\n\nfor listing in listings:\n    print(listing.get_formalised_address())\n    print(listing.get_daft_link())\n\n\n\nRetrieve commercial office listings in Dublin.\n\n\ndaft.set_county(\"Dublin\")\ndaft.set_listing_type(SaleType.COMMERCIAL)\ndaft.set_commercial_property_type(CommercialType.OFFICE)\n\nlistings = daft.get_listings()\n\nfor listing in listings:\n    print(listing.get_formalised_address())\n    print(listing.get_daft_link())\n\n\n\nGet the current sale agreed prices for properties in Dublin.\n\n\ndaft.set_county('Dublin City')\ndaft.set_area('Dublin 15')\ndaft.set_listing_type(SaleType.PROPERTIES)\ndaft.set_min_price(1000)\ndaft.set_max_price(1500)\ndaft.set_sale_agreed(True)\n\nlistings = daft.get_listings()\n\nfor listing in listings:\n    print(listing.get_formalised_address())\n    print(listing.get_daft_link())\n\n\n\nYou can sort the listings by price, distance, upcoming viewing or date using the SortType object.\nThe SortOrder object allows you to sort the listings descending or ascending. For example:\n\n\nfrom daftlistings import SortOrder, SortType\n\ndaft.set_county('Dublin City')\ndaft.set_area('Dublin 15')\ndaft.set_listing_type(SaleType.PROPERTIES)\ndaft.set_min_price(150000)\ndaft.set_max_price(175000)\ndaft.set_sort_order(SortOrder.ASCENDING)\ndaft.set_sort_by(SortType.PRICE)\n\n\nlistings = daft.get_listings()\n\nfor listing in listings:\n    print(listing.get_formalised_address())\n    print(listing.get_daft_link())\n    print(listing.get_price())\n\n\n\nRetrieve all properties for sale in Dublin 15. This example loops through each page of listings and prints the result.\n\n\noffset = 0\npages = True\n\nwhile pages:\n\n    daft.set_county('Dublin City')\n    daft.set_area('Dublin 15')\n    daft.set_listing_type(SaleType.PROPERTIES)\n    daft.set_offset(offset)\n\n    listings = daft.get_listings()\n\n    if not listings:\n        pages = False\n\n    for listing in listings:\n        print(listing.get_agent_url())\n        print(listing.get_price())\n        print(listing.get_formalised_address())\n        print(listing.get_daft_link())\n        print(' ')\n\n\n    offset += 10\n\n\n\nDaft\n\n\nset_verbose\n\n\nSet to True to print the HTTP status code and HTML content when making a request to Daft.\n\n\nset_area\n\n\nThe area to retrieve listings from.\n\n\nset_county\n\n\nThe county to retrieve listings from.\n\n\nset_offset\n\n\nSet the page number.\n\n\nset_min_price\n\n\nThe minimum price of the listing.\n\n\nset_max_price\n\n\nThe maximum price of the listing.\n\n\nset_listing_type\n\n\nThe listings you'd like to scrape i.e houses, properties, auction, commercial or apartments.\nUse the SaleType or RentType enum to select the listing type. i.e set_listing_type(SaleType.PROPERTIES)\n\n\nset_sale_agreed\n\n\nIf set to True, we'll scrape listings that are sale agreed.\n\n\nset_min_beds\n\n\nThe minimum number of beds.\n\n\nset_max_beds\n\n\nThe maximum number of beds.\n\n\nset_sort_by\n\n\nUse this method to sort by price, distance, upcoming viewing or date using the SortType object.\n\n\nset_sort_order\n\n\nUse the SortOrder object to sort the listings descending or ascending.\n\n\nset_commercial_property_type\n\n\nUse the CommercialType object to set the commercial property type.\n\n\nget_listings\n\n\nThe get listings function returns an array of Listing objects.\n\n\nListing\n\n\nget_address_line_1\n\n\nThis method returns line 1 of the listing address.\n\n\nget_address_line_2\n\n\nThis method returns line 2 of the listing address.\n\n\nget_town\n\n\nThis method returns the town.\n\n\nget_county\n\n\nThis method returns the county.\n\n\nget_formalised_address\n\n\nThis method returns the full address.\n\n\nget_listing_image\n\n\nThis method returns the URL of the listing image.\n\n\nget_agent\n\n\nThis method returns the agent name.\n\n\nget_agent_url\n\n\nThis method returns the agent URL.\n\n\nget_daft_link\n\n\nThis method returns the URL of the listing.\n\n\nget_dwelling_type\n\n\nThis method returns the dwelling type.\n\n\nget_posted_since\n\n\nThis method returns the date the listing was posted.\n\n\nget_num_bedrooms\n\n\nThis method returns the number of bedrooms.\n\n\nget_num_bathrooms\n\n\nThis method returns the number of bathrooms.\n\n\nget_price\n\n\nThis method returns the price.\n\n\nget_price_change\n\n\nThis method returns the price change.\n\n\nget_facilities\n\n\nThis method returns the properties facilities.\n\n\nget_features\n\n\nThis method returns the properties features.\n\n\nget_area_size\n\n\nThe method returns the area size of the listing. This method should be called when retrieving commercial type listings.\n\n\nget_contact_number\n\n\nThis method returns the contact number.\n\n\nDocumentation\n\n\nThe current documentation can be viewed here: https://anthonybloomer.github.io/daftlistings/\n\n\nThe documentation has been created using mkdocs.\n\n\nTo update the documentation, clone the repository and edit \ndocs/index.md\n\n\nTo view your changes, run:\n\n\nmkdocs serve\n\n\n\nTo build the documentation, run:\n\n\nmkdocs build\n\n\n\nThis will create a directory called site. Copy the site directory to a new directory and checkout gh-pages\n\n\ngit checkout gh-pages\n\n\n\nCopy any changes from the \nsite\n directory to this directory and push your changes.\n\n\nContributing\n\n\nContribute to daftlistings by suggesting new features or providing feedback / criticism.\nPull requests are always welcome too so feel free to hack away.", 
+            "text": "Overview\n\n\nA library that enables programmatic interaction with daft.ie allowing you to retrieve properties by location, sale type, price and property type. daftlistings has been tested on Python 2.7 and Python 3.5.2\n\n\nInstallation\n\n\ndaftlistings is available on the Python Package Index (PyPI) at https://pypi.python.org/pypi/daftlistings\n\n\nYou can install daftlistings using pip.\n\n\nvirtualenv env\nsource env/bin/activate\npip install daftlistings\n\n\n\nDeveloping locally\n\n\nThis library is under active development.\nBefore new versions are pushed to PyPI, you can download the development version to avail of any new features.\n\n\ngit clone https://github.com/AnthonyBloomer/daftlistings.git\ncd daftlistings\nvirtualenv env\nsource env/bin/activate\npip install -r requirements.txt\n\n\n\nExamples\n\n\nGet the current properties for rent in Dublin that are between \u20ac1000 and\n\u20ac1500 per month.\n\n\nfrom daftlistings import Daft, CommercialType, SaleType, RentType\n\ndaft = Daft()\ndaft.set_county('Dublin City')\ndaft.set_area('Dublin 15')\ndaft.set_listing_type(RentType.APARTMENTS)\ndaft.set_min_price(1000)\ndaft.set_max_price(1500)\n\nlistings = daft.get_listings()\n\nfor listing in listings:\n    print(listing.get_formalised_address())\n    print(listing.get_daft_link())\n\n\n\nRetrieve commercial office listings in Dublin.\n\n\ndaft.set_county(\"Dublin\")\ndaft.set_listing_type(SaleType.COMMERCIAL)\ndaft.set_commercial_property_type(CommercialType.OFFICE)\n\nlistings = daft.get_listings()\n\nfor listing in listings:\n    print(listing.get_formalised_address())\n    print(listing.get_daft_link())\n\n\n\nGet the current sale agreed prices for properties in Dublin.\n\n\ndaft.set_county('Dublin City')\ndaft.set_area('Dublin 15')\ndaft.set_listing_type(SaleType.PROPERTIES)\ndaft.set_min_price(1000)\ndaft.set_max_price(1500)\ndaft.set_sale_agreed(True)\n\nlistings = daft.get_listings()\n\nfor listing in listings:\n    print(listing.get_formalised_address())\n    print(listing.get_daft_link())\n\n\n\nYou can sort the listings by price, distance, upcoming viewing or date using the SortType object.\nThe SortOrder object allows you to sort the listings descending or ascending. For example:\n\n\nfrom daftlistings import SortOrder, SortType\n\ndaft.set_county('Dublin City')\ndaft.set_area('Dublin 15')\ndaft.set_listing_type(SaleType.PROPERTIES)\ndaft.set_min_price(150000)\ndaft.set_max_price(175000)\ndaft.set_sort_order(SortOrder.ASCENDING)\ndaft.set_sort_by(SortType.PRICE)\n\n\nlistings = daft.get_listings()\n\nfor listing in listings:\n    print(listing.get_formalised_address())\n    print(listing.get_daft_link())\n    print(listing.get_price())\n\n\n\nRetrieve all properties for sale in Dublin 15. This example loops through each page of listings and prints the result.\n\n\noffset = 0\npages = True\n\nwhile pages:\n\n    daft.set_county('Dublin City')\n    daft.set_area('Dublin 15')\n    daft.set_listing_type(SaleType.PROPERTIES)\n    daft.set_offset(offset)\n\n    listings = daft.get_listings()\n\n    if not listings:\n        pages = False\n\n    for listing in listings:\n        print(listing.get_agent_url())\n        print(listing.get_price())\n        print(listing.get_formalised_address())\n        print(listing.get_daft_link())\n        print(' ')\n\n\n    offset += 10\n\n\n\nFind student accommodation near Trinity College Dublin that is between 800 and 1000 per month.\n\n\n    daft.set_listing_type(RentType.STUDENT_ACCOMMODATION)\n    daft.set_university(University.TCD)\n    daft.set_student_accommodation_type(StudentAccommodationType.ROOM_TO_SHARE)\n    daft.set_min_price(800)\n    daft.set_max_price(1000)\n    daft.set_sort_by(SortType.PRICE)\n    daft.set_sort_order(SortOrder.ASCENDING)\n    listings = daft.get_listings()\n\n    for listing in listings:\n        print(listing.get_price())\n        print(listing.get_formalised_address())\n        print(listing.get_daft_link())\n        print(' ')\n\n\n\nDaft\n\n\nset_verbose\n\n\nSet to True to print the HTTP status code and HTML content when making a request to Daft.\n\n\nset_area\n\n\nThe area to retrieve listings from. Use an array to search multiple areas.\n\n\nset_county\n\n\nThe county to retrieve listings from.\n\n\nset_offset\n\n\nSet the page number.\n\n\nset_min_price\n\n\nThe minimum price of the listing.\n\n\nset_max_price\n\n\nThe maximum price of the listing.\n\n\nset_listing_type\n\n\nThe listings you'd like to scrape i.e houses, properties, auction, commercial or apartments.\nUse the SaleType or RentType enum to select the listing type. i.e set_listing_type(SaleType.PROPERTIES)\n\n\nset_sale_agreed\n\n\nIf set to True, we'll scrape listings that are sale agreed.\n\n\nset_min_beds\n\n\nThe minimum number of beds.\n\n\nset_max_beds\n\n\nThe maximum number of beds.\n\n\nset_sort_by\n\n\nUse this method to sort by price, distance, upcoming viewing or date using the SortType object.\n\n\nset_sort_order\n\n\nUse the SortOrder object to sort the listings descending or ascending.\n\n\nset_commercial_property_type\n\n\nUse the CommercialType object to set the commercial property type.\n\n\nset_address\n\n\nSet the address.\n\n\nset_min_lease\n\n\nSet the minimum lease period in months.\n\n\nset_max_lease\n\n\nSet the maximum lease period in months.\n\n\nset_couples_accepted\n\n\nSet to true to only return listings that accept couples.\n\n\nset_gender\n\n\nSet the gender accepted using the Gender enum.\n\n\nset_ensuite_only\n\n\nSet to true to only return listings that are ensuite only.\n\n\nset_added_since\n\n\nSet this to retrieve ads that are a given number of days old. For example to retrieve listings that have been been added a week ago: set_added_since(7)\n\n\nset_room_type\n\n\nSet the room type.\n\n\nset_with_photos\n\n\nSet to True to only get listings that has photos.\n\n\nset_keywords\n\n\nPass an array to filter the result by keywords.\n\n\nset_furnished\n\n\nSet to true to only get rental properties that are furnished.\n\n\nset_commercial_min_size\n\n\nThe minimum size in sq ft.\n\n\nset_commercial_max_size\n\n\nThe maximum size in sq ft.\n\n\nset_university\n\n\nSet the university.\n\n\nset_student_accommodation_type\n\n\nSet the student accomodation type.\n\n\nset_num_occupants\n\n\nSet the max number of occupants living in the property for rent.\n\n\nset_area_type\n\n\nSet the area type.\n\n\nset_public_transport_route\n\n\nSet the public transport route.\n\n\nget_listings\n\n\nThe get listings function returns an array of Listing objects.\n\n\nListing\n\n\nget_address_line_1\n\n\nThis method returns line 1 of the listing address.\n\n\nget_address_line_2\n\n\nThis method returns line 2 of the listing address.\n\n\nget_town\n\n\nThis method returns the town.\n\n\nget_county\n\n\nThis method returns the county.\n\n\nget_formalised_address\n\n\nThis method returns the full address.\n\n\nget_listing_image\n\n\nThis method returns the URL of the listing image.\n\n\nget_agent\n\n\nThis method returns the agent name.\n\n\nget_agent_url\n\n\nThis method returns the agent URL.\n\n\nget_daft_link\n\n\nThis method returns the URL of the listing.\n\n\nget_dwelling_type\n\n\nThis method returns the dwelling type.\n\n\nget_posted_since\n\n\nThis method returns the date the listing was posted.\n\n\nget_num_bedrooms\n\n\nThis method returns the number of bedrooms.\n\n\nget_num_bathrooms\n\n\nThis method returns the number of bathrooms.\n\n\nget_price\n\n\nThis method returns the price.\n\n\nget_price_change\n\n\nThis method returns the price change.\n\n\nget_facilities\n\n\nThis method returns the properties facilities.\n\n\nget_features\n\n\nThis method returns the properties features.\n\n\nget_area_size\n\n\nThe method returns the area size of the listing. This method should be called when retrieving commercial type listings.\n\n\nget_contact_number\n\n\nThis method returns the contact number.\n\n\nas_dict\n\n\nReturn a Listing object as Dictionary\n\n\nDocumentation\n\n\nThe current documentation can be viewed here: https://anthonybloomer.github.io/daftlistings/\n\n\nThe documentation has been created using mkdocs.\n\n\nTo update the documentation, clone the repository and edit \ndocs/index.md\n\n\nTo view your changes, run:\n\n\nmkdocs serve\n\n\n\nTo build the documentation, run:\n\n\nmkdocs build\n\n\n\nThis will create a directory called site. Copy the site directory to a new directory and checkout gh-pages\n\n\ngit checkout gh-pages\n\n\n\nCopy any changes from the \nsite\n directory to this directory and push your changes.\n\n\nContributing\n\n\nContribute to daftlistings by suggesting new features or providing feedback / criticism.\nPull requests are always welcome too so feel free to hack away.", 
             "title": "Home"
         }, 
         {
@@ -22,7 +22,7 @@
         }, 
         {
             "location": "/#examples", 
-            "text": "Get the current properties for rent in Dublin that are between \u20ac1000 and\n\u20ac1500 per month.  from daftlistings import Daft, CommercialType, SaleType, RentType\n\ndaft = Daft()\ndaft.set_county('Dublin City')\ndaft.set_area('Dublin 15')\ndaft.set_listing_type(RentType.APARTMENTS)\ndaft.set_min_price(1000)\ndaft.set_max_price(1500)\n\nlistings = daft.get_listings()\n\nfor listing in listings:\n    print(listing.get_formalised_address())\n    print(listing.get_daft_link())  Retrieve commercial office listings in Dublin.  daft.set_county(\"Dublin\")\ndaft.set_listing_type(SaleType.COMMERCIAL)\ndaft.set_commercial_property_type(CommercialType.OFFICE)\n\nlistings = daft.get_listings()\n\nfor listing in listings:\n    print(listing.get_formalised_address())\n    print(listing.get_daft_link())  Get the current sale agreed prices for properties in Dublin.  daft.set_county('Dublin City')\ndaft.set_area('Dublin 15')\ndaft.set_listing_type(SaleType.PROPERTIES)\ndaft.set_min_price(1000)\ndaft.set_max_price(1500)\ndaft.set_sale_agreed(True)\n\nlistings = daft.get_listings()\n\nfor listing in listings:\n    print(listing.get_formalised_address())\n    print(listing.get_daft_link())  You can sort the listings by price, distance, upcoming viewing or date using the SortType object.\nThe SortOrder object allows you to sort the listings descending or ascending. For example:  from daftlistings import SortOrder, SortType\n\ndaft.set_county('Dublin City')\ndaft.set_area('Dublin 15')\ndaft.set_listing_type(SaleType.PROPERTIES)\ndaft.set_min_price(150000)\ndaft.set_max_price(175000)\ndaft.set_sort_order(SortOrder.ASCENDING)\ndaft.set_sort_by(SortType.PRICE)\n\n\nlistings = daft.get_listings()\n\nfor listing in listings:\n    print(listing.get_formalised_address())\n    print(listing.get_daft_link())\n    print(listing.get_price())  Retrieve all properties for sale in Dublin 15. This example loops through each page of listings and prints the result.  offset = 0\npages = True\n\nwhile pages:\n\n    daft.set_county('Dublin City')\n    daft.set_area('Dublin 15')\n    daft.set_listing_type(SaleType.PROPERTIES)\n    daft.set_offset(offset)\n\n    listings = daft.get_listings()\n\n    if not listings:\n        pages = False\n\n    for listing in listings:\n        print(listing.get_agent_url())\n        print(listing.get_price())\n        print(listing.get_formalised_address())\n        print(listing.get_daft_link())\n        print(' ')\n\n\n    offset += 10", 
+            "text": "Get the current properties for rent in Dublin that are between \u20ac1000 and\n\u20ac1500 per month.  from daftlistings import Daft, CommercialType, SaleType, RentType\n\ndaft = Daft()\ndaft.set_county('Dublin City')\ndaft.set_area('Dublin 15')\ndaft.set_listing_type(RentType.APARTMENTS)\ndaft.set_min_price(1000)\ndaft.set_max_price(1500)\n\nlistings = daft.get_listings()\n\nfor listing in listings:\n    print(listing.get_formalised_address())\n    print(listing.get_daft_link())  Retrieve commercial office listings in Dublin.  daft.set_county(\"Dublin\")\ndaft.set_listing_type(SaleType.COMMERCIAL)\ndaft.set_commercial_property_type(CommercialType.OFFICE)\n\nlistings = daft.get_listings()\n\nfor listing in listings:\n    print(listing.get_formalised_address())\n    print(listing.get_daft_link())  Get the current sale agreed prices for properties in Dublin.  daft.set_county('Dublin City')\ndaft.set_area('Dublin 15')\ndaft.set_listing_type(SaleType.PROPERTIES)\ndaft.set_min_price(1000)\ndaft.set_max_price(1500)\ndaft.set_sale_agreed(True)\n\nlistings = daft.get_listings()\n\nfor listing in listings:\n    print(listing.get_formalised_address())\n    print(listing.get_daft_link())  You can sort the listings by price, distance, upcoming viewing or date using the SortType object.\nThe SortOrder object allows you to sort the listings descending or ascending. For example:  from daftlistings import SortOrder, SortType\n\ndaft.set_county('Dublin City')\ndaft.set_area('Dublin 15')\ndaft.set_listing_type(SaleType.PROPERTIES)\ndaft.set_min_price(150000)\ndaft.set_max_price(175000)\ndaft.set_sort_order(SortOrder.ASCENDING)\ndaft.set_sort_by(SortType.PRICE)\n\n\nlistings = daft.get_listings()\n\nfor listing in listings:\n    print(listing.get_formalised_address())\n    print(listing.get_daft_link())\n    print(listing.get_price())  Retrieve all properties for sale in Dublin 15. This example loops through each page of listings and prints the result.  offset = 0\npages = True\n\nwhile pages:\n\n    daft.set_county('Dublin City')\n    daft.set_area('Dublin 15')\n    daft.set_listing_type(SaleType.PROPERTIES)\n    daft.set_offset(offset)\n\n    listings = daft.get_listings()\n\n    if not listings:\n        pages = False\n\n    for listing in listings:\n        print(listing.get_agent_url())\n        print(listing.get_price())\n        print(listing.get_formalised_address())\n        print(listing.get_daft_link())\n        print(' ')\n\n\n    offset += 10  Find student accommodation near Trinity College Dublin that is between 800 and 1000 per month.      daft.set_listing_type(RentType.STUDENT_ACCOMMODATION)\n    daft.set_university(University.TCD)\n    daft.set_student_accommodation_type(StudentAccommodationType.ROOM_TO_SHARE)\n    daft.set_min_price(800)\n    daft.set_max_price(1000)\n    daft.set_sort_by(SortType.PRICE)\n    daft.set_sort_order(SortOrder.ASCENDING)\n    listings = daft.get_listings()\n\n    for listing in listings:\n        print(listing.get_price())\n        print(listing.get_formalised_address())\n        print(listing.get_daft_link())\n        print(' ')", 
             "title": "Examples"
         }, 
         {
@@ -37,7 +37,7 @@
         }, 
         {
             "location": "/#set_area", 
-            "text": "The area to retrieve listings from.", 
+            "text": "The area to retrieve listings from. Use an array to search multiple areas.", 
             "title": "set_area"
         }, 
         {
@@ -94,6 +94,96 @@
             "location": "/#set_commercial_property_type", 
             "text": "Use the CommercialType object to set the commercial property type.", 
             "title": "set_commercial_property_type"
+        }, 
+        {
+            "location": "/#set_address", 
+            "text": "Set the address.", 
+            "title": "set_address"
+        }, 
+        {
+            "location": "/#set_min_lease", 
+            "text": "Set the minimum lease period in months.", 
+            "title": "set_min_lease"
+        }, 
+        {
+            "location": "/#set_max_lease", 
+            "text": "Set the maximum lease period in months.", 
+            "title": "set_max_lease"
+        }, 
+        {
+            "location": "/#set_couples_accepted", 
+            "text": "Set to true to only return listings that accept couples.", 
+            "title": "set_couples_accepted"
+        }, 
+        {
+            "location": "/#set_gender", 
+            "text": "Set the gender accepted using the Gender enum.", 
+            "title": "set_gender"
+        }, 
+        {
+            "location": "/#set_ensuite_only", 
+            "text": "Set to true to only return listings that are ensuite only.", 
+            "title": "set_ensuite_only"
+        }, 
+        {
+            "location": "/#set_added_since", 
+            "text": "Set this to retrieve ads that are a given number of days old. For example to retrieve listings that have been been added a week ago: set_added_since(7)", 
+            "title": "set_added_since"
+        }, 
+        {
+            "location": "/#set_room_type", 
+            "text": "Set the room type.", 
+            "title": "set_room_type"
+        }, 
+        {
+            "location": "/#set_with_photos", 
+            "text": "Set to True to only get listings that has photos.", 
+            "title": "set_with_photos"
+        }, 
+        {
+            "location": "/#set_keywords", 
+            "text": "Pass an array to filter the result by keywords.", 
+            "title": "set_keywords"
+        }, 
+        {
+            "location": "/#set_furnished", 
+            "text": "Set to true to only get rental properties that are furnished.", 
+            "title": "set_furnished"
+        }, 
+        {
+            "location": "/#set_commercial_min_size", 
+            "text": "The minimum size in sq ft.", 
+            "title": "set_commercial_min_size"
+        }, 
+        {
+            "location": "/#set_commercial_max_size", 
+            "text": "The maximum size in sq ft.", 
+            "title": "set_commercial_max_size"
+        }, 
+        {
+            "location": "/#set_university", 
+            "text": "Set the university.", 
+            "title": "set_university"
+        }, 
+        {
+            "location": "/#set_student_accommodation_type", 
+            "text": "Set the student accomodation type.", 
+            "title": "set_student_accommodation_type"
+        }, 
+        {
+            "location": "/#set_num_occupants", 
+            "text": "Set the max number of occupants living in the property for rent.", 
+            "title": "set_num_occupants"
+        }, 
+        {
+            "location": "/#set_area_type", 
+            "text": "Set the area type.", 
+            "title": "set_area_type"
+        }, 
+        {
+            "location": "/#set_public_transport_route", 
+            "text": "Set the public transport route.", 
+            "title": "set_public_transport_route"
         }, 
         {
             "location": "/#get_listings", 
@@ -199,6 +289,11 @@
             "location": "/#get_contact_number", 
             "text": "This method returns the contact number.", 
             "title": "get_contact_number"
+        }, 
+        {
+            "location": "/#as_dict", 
+            "text": "Return a Listing object as Dictionary", 
+            "title": "as_dict"
         }, 
         {
             "location": "/#documentation", 

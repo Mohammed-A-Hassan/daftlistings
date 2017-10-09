@@ -1,191 +1,233 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="A web scraper for Daft.ie">
-        <meta name="author" content="Anthony Bloomer">
-        
-        <link rel="shortcut icon" href="./img/favicon.ico">
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A web scraper for Daft.ie">
+  <meta name="author" content="Anthony Bloomer">
+  
+  <title>daftlistings</title>
+  
 
-	<title>daftlistings</title>
+  <link rel="shortcut icon" href="./img/favicon.ico">
 
-        <link href="./css/bootstrap-custom.min.css" rel="stylesheet">
-        <link href="./css/font-awesome-4.0.3.css" rel="stylesheet">
-        <link rel="stylesheet" href="./css/highlight.css">
-        <link href="./css/base.css" rel="stylesheet">
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
-        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-        <!--[if lt IE 9]>
-            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-        <![endif]-->
+  <link rel="stylesheet" href="./css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="./css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="./css/highlight.css">
 
-        
-    </head>
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "None";
+    var mkdocs_page_input_path = "index.md";
+    var mkdocs_page_url = "/";
+  </script>
+  
+  <script src="./js/jquery-2.1.1.min.js"></script>
+  <script src="./js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="./js/highlight.pack.js"></script>
+  <script src="./js/theme.js"></script> 
 
-    <body>
+  
+</head>
 
-        <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-    <div class="container">
+<body class="wy-body-for-nav" role="document">
 
-        <!-- Collapsed navigation -->
-        <div class="navbar-header">
-            <!-- Expander button -->
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
+  <div class="wy-grid-for-nav">
 
-            <!-- Main title -->
-            <a class="navbar-brand" href=".">daftlistings</a>
-        </div>
-
-        <!-- Expanded navigation -->
-        <div class="navbar-collapse collapse">
-            <!-- Main navigation -->
-            <ul class="nav navbar-nav">
-            
-            
-                <li class="active">
-                    <a href=".">Home</a>
-                </li>
-            
-            
-            </ul>
-
-            <!-- Search, Navigation and Repo links -->
-            <ul class="nav navbar-nav navbar-right">
-                <li>
-                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
-                        <i class="fa fa-search"></i> Search
-                    </a>
-                </li>
-                <li class="disabled">
-                    <a rel="next" >
-                        <i class="fa fa-arrow-left"></i> Previous
-                    </a>
-                </li>
-                <li class="disabled">
-                    <a rel="prev" >
-                        Next <i class="fa fa-arrow-right"></i>
-                    </a>
-                </li>
-                
-                <li>
-                    <a href="https://github.com/anthonybloomer/daftlistings">
-                        
-                            <i class="fa fa-github"></i>
-                        
-                        GitHub
-                    </a>
-                </li>
-                
-            </ul>
-        </div>
-    </div>
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="." class="icon icon-home"> daftlistings</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="./search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
 </div>
+      </div>
 
-        <div class="container">
-            <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
-    <ul class="nav bs-sidenav">
-    
-        <li class="main active"><a href="#overview">Overview</a></li>
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+            <li>
+    <li class="toctree-l1 current">
+        <a class="current" href=".">Home</a>
         
-    
-        <li class="main "><a href="#installation">Installation</a></li>
+            <ul>
+            
+                <li class="toctree-l3"><a href="#overview">Overview</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#installation">Installation</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#developing-locally">Developing locally</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#examples">Examples</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#daft">Daft</a></li>
+                
+                    <li><a class="toctree-l4" href="#set_verbose">set_verbose</a></li>
+                
+                    <li><a class="toctree-l4" href="#set_area">set_area</a></li>
+                
+                    <li><a class="toctree-l4" href="#set_county">set_county</a></li>
+                
+                    <li><a class="toctree-l4" href="#set_offset">set_offset</a></li>
+                
+                    <li><a class="toctree-l4" href="#set_min_price">set_min_price</a></li>
+                
+                    <li><a class="toctree-l4" href="#set_max_price">set_max_price</a></li>
+                
+                    <li><a class="toctree-l4" href="#set_listing_type">set_listing_type</a></li>
+                
+                    <li><a class="toctree-l4" href="#set_sale_agreed">set_sale_agreed</a></li>
+                
+                    <li><a class="toctree-l4" href="#set_min_beds">set_min_beds</a></li>
+                
+                    <li><a class="toctree-l4" href="#set_max_beds">set_max_beds</a></li>
+                
+                    <li><a class="toctree-l4" href="#set_sort_by">set_sort_by</a></li>
+                
+                    <li><a class="toctree-l4" href="#set_sort_order">set_sort_order</a></li>
+                
+                    <li><a class="toctree-l4" href="#set_commercial_property_type">set_commercial_property_type</a></li>
+                
+                    <li><a class="toctree-l4" href="#set_address">set_address</a></li>
+                
+                    <li><a class="toctree-l4" href="#set_min_lease">set_min_lease</a></li>
+                
+                    <li><a class="toctree-l4" href="#set_max_lease">set_max_lease</a></li>
+                
+                    <li><a class="toctree-l4" href="#set_couples_accepted">set_couples_accepted</a></li>
+                
+                    <li><a class="toctree-l4" href="#set_gender">set_gender</a></li>
+                
+                    <li><a class="toctree-l4" href="#set_ensuite_only">set_ensuite_only</a></li>
+                
+                    <li><a class="toctree-l4" href="#set_added_since">set_added_since</a></li>
+                
+                    <li><a class="toctree-l4" href="#set_room_type">set_room_type</a></li>
+                
+                    <li><a class="toctree-l4" href="#set_with_photos">set_with_photos</a></li>
+                
+                    <li><a class="toctree-l4" href="#set_keywords">set_keywords</a></li>
+                
+                    <li><a class="toctree-l4" href="#set_furnished">set_furnished</a></li>
+                
+                    <li><a class="toctree-l4" href="#set_commercial_min_size">set_commercial_min_size</a></li>
+                
+                    <li><a class="toctree-l4" href="#set_commercial_max_size">set_commercial_max_size</a></li>
+                
+                    <li><a class="toctree-l4" href="#set_university">set_university</a></li>
+                
+                    <li><a class="toctree-l4" href="#set_student_accommodation_type">set_student_accommodation_type</a></li>
+                
+                    <li><a class="toctree-l4" href="#set_num_occupants">set_num_occupants</a></li>
+                
+                    <li><a class="toctree-l4" href="#set_area_type">set_area_type</a></li>
+                
+                    <li><a class="toctree-l4" href="#set_public_transport_route">set_public_transport_route</a></li>
+                
+                    <li><a class="toctree-l4" href="#get_listings">get_listings</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#listing">Listing</a></li>
+                
+                    <li><a class="toctree-l4" href="#get_address_line_1">get_address_line_1</a></li>
+                
+                    <li><a class="toctree-l4" href="#get_address_line_2">get_address_line_2</a></li>
+                
+                    <li><a class="toctree-l4" href="#get_town">get_town</a></li>
+                
+                    <li><a class="toctree-l4" href="#get_county">get_county</a></li>
+                
+                    <li><a class="toctree-l4" href="#get_formalised_address">get_formalised_address</a></li>
+                
+                    <li><a class="toctree-l4" href="#get_listing_image">get_listing_image</a></li>
+                
+                    <li><a class="toctree-l4" href="#get_agent">get_agent</a></li>
+                
+                    <li><a class="toctree-l4" href="#get_agent_url">get_agent_url</a></li>
+                
+                    <li><a class="toctree-l4" href="#get_daft_link">get_daft_link</a></li>
+                
+                    <li><a class="toctree-l4" href="#get_dwelling_type">get_dwelling_type</a></li>
+                
+                    <li><a class="toctree-l4" href="#get_posted_since">get_posted_since</a></li>
+                
+                    <li><a class="toctree-l4" href="#get_num_bedrooms">get_num_bedrooms</a></li>
+                
+                    <li><a class="toctree-l4" href="#get_num_bathrooms">get_num_bathrooms</a></li>
+                
+                    <li><a class="toctree-l4" href="#get_price">get_price</a></li>
+                
+                    <li><a class="toctree-l4" href="#get_price_change">get_price_change</a></li>
+                
+                    <li><a class="toctree-l4" href="#get_facilities">get_facilities</a></li>
+                
+                    <li><a class="toctree-l4" href="#get_features">get_features</a></li>
+                
+                    <li><a class="toctree-l4" href="#get_area_size">get_area_size</a></li>
+                
+                    <li><a class="toctree-l4" href="#get_contact_number">get_contact_number</a></li>
+                
+                    <li><a class="toctree-l4" href="#as_dict">as_dict</a></li>
+                
+                    <li><a class="toctree-l4" href="#documentation">Documentation</a></li>
+                
+                    <li><a class="toctree-l4" href="#contributing">Contributing</a></li>
+                
+            
+            </ul>
         
-    
-        <li class="main "><a href="#developing-locally">Developing locally</a></li>
-        
-    
-        <li class="main "><a href="#examples">Examples</a></li>
-        
-    
-        <li class="main "><a href="#daft">Daft</a></li>
-        
-            <li><a href="#set_verbose">set_verbose</a></li>
-        
-            <li><a href="#set_area">set_area</a></li>
-        
-            <li><a href="#set_county">set_county</a></li>
-        
-            <li><a href="#set_offset">set_offset</a></li>
-        
-            <li><a href="#set_min_price">set_min_price</a></li>
-        
-            <li><a href="#set_max_price">set_max_price</a></li>
-        
-            <li><a href="#set_listing_type">set_listing_type</a></li>
-        
-            <li><a href="#set_sale_agreed">set_sale_agreed</a></li>
-        
-            <li><a href="#set_min_beds">set_min_beds</a></li>
-        
-            <li><a href="#set_max_beds">set_max_beds</a></li>
-        
-            <li><a href="#set_sort_by">set_sort_by</a></li>
-        
-            <li><a href="#set_sort_order">set_sort_order</a></li>
-        
-            <li><a href="#set_commercial_property_type">set_commercial_property_type</a></li>
-        
-            <li><a href="#get_listings">get_listings</a></li>
-        
-    
-        <li class="main "><a href="#listing">Listing</a></li>
-        
-            <li><a href="#get_address_line_1">get_address_line_1</a></li>
-        
-            <li><a href="#get_address_line_2">get_address_line_2</a></li>
-        
-            <li><a href="#get_town">get_town</a></li>
-        
-            <li><a href="#get_county">get_county</a></li>
-        
-            <li><a href="#get_formalised_address">get_formalised_address</a></li>
-        
-            <li><a href="#get_listing_image">get_listing_image</a></li>
-        
-            <li><a href="#get_agent">get_agent</a></li>
-        
-            <li><a href="#get_agent_url">get_agent_url</a></li>
-        
-            <li><a href="#get_daft_link">get_daft_link</a></li>
-        
-            <li><a href="#get_dwelling_type">get_dwelling_type</a></li>
-        
-            <li><a href="#get_posted_since">get_posted_since</a></li>
-        
-            <li><a href="#get_num_bedrooms">get_num_bedrooms</a></li>
-        
-            <li><a href="#get_num_bathrooms">get_num_bathrooms</a></li>
-        
-            <li><a href="#get_price">get_price</a></li>
-        
-            <li><a href="#get_price_change">get_price_change</a></li>
-        
-            <li><a href="#get_facilities">get_facilities</a></li>
-        
-            <li><a href="#get_features">get_features</a></li>
-        
-            <li><a href="#get_area_size">get_area_size</a></li>
-        
-            <li><a href="#get_contact_number">get_contact_number</a></li>
-        
-            <li><a href="#documentation">Documentation</a></li>
-        
-            <li><a href="#contributing">Contributing</a></li>
-        
-    
-    </ul>
-</div></div>
-            <div class="col-md-9" role="main">
+    </li>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
 
-<h1 id="overview">Overview</h1>
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href=".">daftlistings</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Home</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        
+          <a href="https://github.com/anthonybloomer/daftlistings" class="icon icon-github"> Edit on GitHub</a>
+        
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="overview">Overview</h1>
 <p>A library that enables programmatic interaction with daft.ie allowing you to retrieve properties by location, sale type, price and property type. daftlistings has been tested on Python 2.7 and Python 3.5.2</p>
 <h1 id="installation">Installation</h1>
 <p>daftlistings is available on the Python Package Index (PyPI) at https://pypi.python.org/pypi/daftlistings</p>
@@ -292,11 +334,27 @@ while pages:
 
     offset += 10
 </code></pre>
+<p>Find student accommodation near Trinity College Dublin that is between 800 and 1000 per month.</p>
+<pre><code>    daft.set_listing_type(RentType.STUDENT_ACCOMMODATION)
+    daft.set_university(University.TCD)
+    daft.set_student_accommodation_type(StudentAccommodationType.ROOM_TO_SHARE)
+    daft.set_min_price(800)
+    daft.set_max_price(1000)
+    daft.set_sort_by(SortType.PRICE)
+    daft.set_sort_order(SortOrder.ASCENDING)
+    listings = daft.get_listings()
+
+    for listing in listings:
+        print(listing.get_price())
+        print(listing.get_formalised_address())
+        print(listing.get_daft_link())
+        print(' ')
+</code></pre>
 <h1 id="daft">Daft</h1>
 <h2 id="set_verbose">set_verbose</h2>
 <p>Set to True to print the HTTP status code and HTML content when making a request to Daft.</p>
 <h2 id="set_area">set_area</h2>
-<p>The area to retrieve listings from.</p>
+<p>The area to retrieve listings from. Use an array to search multiple areas.</p>
 <h2 id="set_county">set_county</h2>
 <p>The county to retrieve listings from.</p>
 <h2 id="set_offset">set_offset</h2>
@@ -320,6 +378,42 @@ Use the SaleType or RentType enum to select the listing type. i.e set_listing_ty
 <p>Use the SortOrder object to sort the listings descending or ascending.</p>
 <h2 id="set_commercial_property_type">set_commercial_property_type</h2>
 <p>Use the CommercialType object to set the commercial property type.</p>
+<h2 id="set_address">set_address</h2>
+<p>Set the address.</p>
+<h2 id="set_min_lease">set_min_lease</h2>
+<p>Set the minimum lease period in months.</p>
+<h2 id="set_max_lease">set_max_lease</h2>
+<p>Set the maximum lease period in months.</p>
+<h2 id="set_couples_accepted">set_couples_accepted</h2>
+<p>Set to true to only return listings that accept couples.</p>
+<h2 id="set_gender">set_gender</h2>
+<p>Set the gender accepted using the Gender enum.</p>
+<h2 id="set_ensuite_only">set_ensuite_only</h2>
+<p>Set to true to only return listings that are ensuite only.</p>
+<h2 id="set_added_since">set_added_since</h2>
+<p>Set this to retrieve ads that are a given number of days old. For example to retrieve listings that have been been added a week ago: set_added_since(7)</p>
+<h2 id="set_room_type">set_room_type</h2>
+<p>Set the room type.</p>
+<h2 id="set_with_photos">set_with_photos</h2>
+<p>Set to True to only get listings that has photos.</p>
+<h2 id="set_keywords">set_keywords</h2>
+<p>Pass an array to filter the result by keywords.</p>
+<h2 id="set_furnished">set_furnished</h2>
+<p>Set to true to only get rental properties that are furnished.</p>
+<h2 id="set_commercial_min_size">set_commercial_min_size</h2>
+<p>The minimum size in sq ft.</p>
+<h2 id="set_commercial_max_size">set_commercial_max_size</h2>
+<p>The maximum size in sq ft.</p>
+<h2 id="set_university">set_university</h2>
+<p>Set the university.</p>
+<h2 id="set_student_accommodation_type">set_student_accommodation_type</h2>
+<p>Set the student accomodation type.</p>
+<h2 id="set_num_occupants">set_num_occupants</h2>
+<p>Set the max number of occupants living in the property for rent.</p>
+<h2 id="set_area_type">set_area_type</h2>
+<p>Set the area type.</p>
+<h2 id="set_public_transport_route">set_public_transport_route</h2>
+<p>Set the public transport route.</p>
 <h2 id="get_listings">get_listings</h2>
 <p>The get listings function returns an array of Listing objects.</p>
 <h1 id="listing">Listing</h1>
@@ -361,6 +455,8 @@ Use the SaleType or RentType enum to select the listing type. i.e set_listing_ty
 <p>The method returns the area size of the listing. This method should be called when retrieving commercial type listings.</p>
 <h2 id="get_contact_number">get_contact_number</h2>
 <p>This method returns the contact number.</p>
+<h2 id="as_dict">as_dict</h2>
+<p>Return a Listing object as Dictionary</p>
 <h2 id="documentation">Documentation</h2>
 <p>The current documentation can be viewed here: https://anthonybloomer.github.io/daftlistings/</p>
 <p>The documentation has been created using mkdocs.</p>
@@ -377,45 +473,44 @@ Use the SaleType or RentType enum to select the listing type. i.e set_listing_ty
 <p>Copy any changes from the <strong>site</strong> directory to this directory and push your changes.</p>
 <h2 id="contributing">Contributing</h2>
 <p>Contribute to daftlistings by suggesting new features or providing feedback / criticism.
-Pull requests are always welcome too so feel free to hack away.</p></div>
-        </div>
-
-        <footer class="col-md-12">
-            <hr>
-            
-            <center>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</center>
-        </footer>
-
-        <script src="./js/jquery-1.10.2.min.js"></script>
-        <script src="./js/bootstrap-3.0.3.min.js"></script>
-        <script src="./js/highlight.pack.js"></script>
-        <script>var base_url = '.';</script>
-        <script data-main="./mkdocs/js/search.js" src="./mkdocs/js/require.js"></script>
-        <script src="./js/base.js"></script>
-
-        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                        <h4 class="modal-title" id="exampleModalLabel">Search</h4>
-                    </div>
-                    <div class="modal-body">
-                        <p>
-                            From here you can search these documents. Enter
-                            your search terms below.
-                        </p>
-                        <form role="form">
-                            <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
-                            </div>
-                        </form>
-                        <div id="mkdocs-search-results"></div>
-                    </div>
-                    <div class="modal-footer">
-                    </div>
-                </div>
+Pull requests are always welcome too so feel free to hack away.</p>
+              
             </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
         </div>
-    </body>
+      </div>
+
+    </section>
+
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/anthonybloomer/daftlistings" class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+      
+    </span>
+</div>
+
+</body>
 </html>
+
+<!--
+MkDocs version : 0.15.3
+Build Date UTC : 2017-10-09 19:53:50.514882
+-->
