@@ -2,7 +2,7 @@
     "docs": [
         {
             "location": "/", 
-            "text": "Installation\n\n\ndaftlistings is available on the \nPython Package Index (PyPI)\n.\n\n\nYou can install daftlistings using pip.\n\n\n$ virtualenv env\n$ source env/bin/activate\n$ pip install daftlistings\n\n\n\nDocumentation\n\n\nThe documentation has been created using \nmkdocs\n and the \nmkdocs material theme\n. To update the documentation, clone the repository and edit the markdown files in the docs/ directory.\n\n\nTo view your changes, run:\n\n\n$ mkdocs serve\n\n\n\nTo build and publish the documentation, run:\n\n\n$ sh deploy_docs.sh \"Updating documentation\"\n\n\n\nTests\n\n\nThe Python unittest module contains its own test discovery function, which you can run from the command line:\n\n\n$ python -m unittest discover tests/", 
+            "text": "daftlistings enables programmatic interaction with \ndaft.ie\n\n\nInstallation\n\n\ndaftlistings is available on the \nPython Package Index (PyPI)\n.\n\n\nYou can install daftlistings using pip.\n\n\n$ virtualenv env\n$ source env/bin/activate\n$ pip install daftlistings\n\n\n\nDocumentation\n\n\nThe documentation has been created using \nmkdocs\n and the \nmkdocs material theme\n. To update the documentation, clone the repository and edit the markdown files in the docs/ directory.\n\n\nTo view your changes, run:\n\n\n$ mkdocs serve\n\n\n\nTo build and publish the documentation, run:\n\n\n$ sh deploy_docs.sh \"Updating documentation\"\n\n\n\nTests\n\n\nThe Python unittest module contains its own test discovery function, which you can run from the command line:\n\n\n$ python -m unittest discover tests/", 
             "title": "Overview"
         }, 
         {
