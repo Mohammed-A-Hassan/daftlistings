@@ -308,7 +308,7 @@
         {
             "location": "/exception/", 
             "text": "Module daftlistings.exception\n\n\nClasses\n\n\nDaftInputException\n\n\nAncestors (in MRO)\n\n\n\n\n\n\ndaftlistings.exception.DaftInputException\n\n\n\n\n\n\nexceptions.Exception\n\n\n\n\n\n\nexceptions.BaseException\n\n\n\n\n\n\nbuiltin\n.object\n\n\n\n\n\n\nClass variables\n\n\n\n\n\n\nargs\n\n\n\n\n\n\nmessage\n\n\n\n\n\n\nInstance variables\n\n\n\n\nreason\n\n\n\n\nMethods\n\n\n\n\n__init__\n (self, reason)\n\n\n\n\nDaftRequestException\n\n\nAncestors (in MRO)\n\n\n\n\n\n\ndaftlistings.exception.DaftRequestException\n\n\n\n\n\n\nexceptions.Exception\n\n\n\n\n\n\nexceptions.BaseException\n\n\n\n\n\n\nbuiltin\n.object\n\n\n\n\n\n\nClass variables\n\n\n\n\n\n\nargs\n\n\n\n\n\n\nmessage\n\n\n\n\n\n\nInstance variables\n\n\n\n\n\n\nreason\n\n\n\n\n\n\nstatus_code\n\n\n\n\n\n\nMethods\n\n\n\n\n__init__\n (self, status_code, reason)", 
-            "title": "Exception"
+            "title": "Exceptions"
         }, 
         {
             "location": "/exception/#module-daftlistingsexception", 
@@ -433,36 +433,6 @@
         {
             "location": "/person/#methods", 
             "text": "__init__  (self, td)    areas_of_interest  (self)    date_available  (self)    date_entered  (self)    gender  (self)    length_of_lease  (self)    looking_for  (self)    name  (self)    price_range  (self)    url  (self)", 
-            "title": "Methods"
-        }, 
-        {
-            "location": "/request/", 
-            "text": "Module daftlistings.request\n\n\nClasses\n\n\nRequest\n\n\nAncestors (in MRO)\n\n\n\n\ndaftlistings.request.Request\n\n\n\n\nMethods\n\n\n\n\n\n\n__init__\n (self, verbose=False)\n\n\n\n\n\n\nget\n (self, url, params=None)\n\n\n\n\n\n\npost\n (self, url, params=None)", 
-            "title": "Request"
-        }, 
-        {
-            "location": "/request/#module-daftlistingsrequest", 
-            "text": "", 
-            "title": "Module daftlistings.request"
-        }, 
-        {
-            "location": "/request/#classes", 
-            "text": "", 
-            "title": "Classes"
-        }, 
-        {
-            "location": "/request/#request", 
-            "text": "", 
-            "title": "Request"
-        }, 
-        {
-            "location": "/request/#ancestors-in-mro", 
-            "text": "daftlistings.request.Request", 
-            "title": "Ancestors (in MRO)"
-        }, 
-        {
-            "location": "/request/#methods", 
-            "text": "__init__  (self, verbose=False)    get  (self, url, params=None)    post  (self, url, params=None)", 
             "title": "Methods"
         }, 
         {

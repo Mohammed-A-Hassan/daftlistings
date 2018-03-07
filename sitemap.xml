@@ -10,59 +10,43 @@
     
 
     
+        
     <url>
      <loc>/daft/</loc>
      <lastmod>2018-03-07</lastmod>
      <changefreq>daily</changefreq>
     </url>
-    
-
-    
+        
     <url>
      <loc>/enums/</loc>
      <lastmod>2018-03-07</lastmod>
      <changefreq>daily</changefreq>
     </url>
-    
-
-    
+        
     <url>
      <loc>/exception/</loc>
      <lastmod>2018-03-07</lastmod>
      <changefreq>daily</changefreq>
     </url>
-    
-
-    
+        
     <url>
      <loc>/listing/</loc>
      <lastmod>2018-03-07</lastmod>
      <changefreq>daily</changefreq>
     </url>
-    
-
-    
+        
     <url>
      <loc>/person/</loc>
      <lastmod>2018-03-07</lastmod>
      <changefreq>daily</changefreq>
     </url>
-    
-
-    
-    <url>
-     <loc>/request/</loc>
-     <lastmod>2018-03-07</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    
-
-    
+        
     <url>
      <loc>/teamup/</loc>
      <lastmod>2018-03-07</lastmod>
      <changefreq>daily</changefreq>
     </url>
+        
     
 
 </urlset>
