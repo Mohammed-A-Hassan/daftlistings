@@ -2,18 +2,23 @@
     "docs": [
         {
             "location": "/", 
-            "text": "Installation\n\n\ndaftlistings is available on the \nPython Package Index (PyPI)\n.\n\n\nYou can install daftlistings using pip.\n\n\nvirtualenv env\nsource env/bin/activate\npip install daftlistings\n\n\n\nDocumentation\n\n\nThe documentation has been created using mkdocs and the mkdocs material theme. To update the documentation, clone the repository and edit the markdown files in the docs/ directory.\n\n\nTo view your changes, run:\n\n\n$ mkdocs serve\n\n\n\nTo build and publish the documentation, run:\n\n\n$ sh deploy_docs.sh \"Updating documentation\"", 
+            "text": "Installation\n\n\ndaftlistings is available on the \nPython Package Index (PyPI)\n.\n\n\nYou can install daftlistings using pip.\n\n\n$ virtualenv env\n$ source env/bin/activate\n$ pip install daftlistings\n\n\n\nDocumentation\n\n\nThe documentation has been created using \nmkdocs\n and the \nmkdocs material theme\n. To update the documentation, clone the repository and edit the markdown files in the docs/ directory.\n\n\nTo view your changes, run:\n\n\n$ mkdocs serve\n\n\n\nTo build and publish the documentation, run:\n\n\n$ sh deploy_docs.sh \"Updating documentation\"\n\n\n\nTests\n\n\nThe Python unittest module contains its own test discovery function, which you can run from the command line:\n\n\n$ python -m unittest discover tests/", 
             "title": "Overview"
         }, 
         {
             "location": "/#installation", 
-            "text": "daftlistings is available on the  Python Package Index (PyPI) .  You can install daftlistings using pip.  virtualenv env\nsource env/bin/activate\npip install daftlistings", 
+            "text": "daftlistings is available on the  Python Package Index (PyPI) .  You can install daftlistings using pip.  $ virtualenv env\n$ source env/bin/activate\n$ pip install daftlistings", 
             "title": "Installation"
         }, 
         {
             "location": "/#documentation", 
-            "text": "The documentation has been created using mkdocs and the mkdocs material theme. To update the documentation, clone the repository and edit the markdown files in the docs/ directory.  To view your changes, run:  $ mkdocs serve  To build and publish the documentation, run:  $ sh deploy_docs.sh \"Updating documentation\"", 
+            "text": "The documentation has been created using  mkdocs  and the  mkdocs material theme . To update the documentation, clone the repository and edit the markdown files in the docs/ directory.  To view your changes, run:  $ mkdocs serve  To build and publish the documentation, run:  $ sh deploy_docs.sh \"Updating documentation\"", 
             "title": "Documentation"
+        }, 
+        {
+            "location": "/#tests", 
+            "text": "The Python unittest module contains its own test discovery function, which you can run from the command line:  $ python -m unittest discover tests/", 
+            "title": "Tests"
         }, 
         {
             "location": "/examples/", 

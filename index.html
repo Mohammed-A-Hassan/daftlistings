@@ -207,6 +207,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#tests" title="Tests" class="md-nav__link">
+    Tests
+  </a>
+  
+</li>
+      
       
       
       
@@ -358,6 +365,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#tests" title="Tests" class="md-nav__link">
+    Tests
+  </a>
+  
+</li>
+      
       
       
       
@@ -380,17 +394,21 @@
                 <h2 id="installation">Installation</h2>
 <p>daftlistings is available on the <a href="https://pypi.python.org/pypi/daftlistings">Python Package Index (PyPI)</a>.</p>
 <p>You can install daftlistings using pip.</p>
-<pre><code>virtualenv env
-source env/bin/activate
-pip install daftlistings
+<pre><code>$ virtualenv env
+$ source env/bin/activate
+$ pip install daftlistings
 </code></pre>
 <h2 id="documentation">Documentation</h2>
-<p>The documentation has been created using mkdocs and the mkdocs material theme. To update the documentation, clone the repository and edit the markdown files in the docs/ directory.</p>
+<p>The documentation has been created using <a href="http://www.mkdocs.org/">mkdocs</a> and the <a href="https://squidfunk.github.io/mkdocs-material/">mkdocs material theme</a>. To update the documentation, clone the repository and edit the markdown files in the docs/ directory.</p>
 <p>To view your changes, run:</p>
 <pre><code>$ mkdocs serve
 </code></pre>
 <p>To build and publish the documentation, run:</p>
 <pre><code>$ sh deploy_docs.sh "Updating documentation"
+</code></pre>
+<h2 id="tests">Tests</h2>
+<p>The Python unittest module contains its own test discovery function, which you can run from the command line:</p>
+<pre><code>$ python -m unittest discover tests/
 </code></pre>
                 
                   
