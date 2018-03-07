@@ -2,13 +2,18 @@
     "docs": [
         {
             "location": "/", 
-            "text": "daftlistings enables programmatic interaction with \ndaft.ie\n\n\nInstallation\n\n\ndaftlistings is available on the \nPython Package Index (PyPI)\n.\n\n\nYou can install daftlistings using pip.\n\n\n$ virtualenv env\n$ source env/bin/activate\n$ pip install daftlistings\n\n\n\nDocumentation\n\n\nThe documentation has been created using \nmkdocs\n and the \nmkdocs material theme\n. To update the documentation, clone the repository and edit the markdown files in the docs/ directory.\n\n\nTo view your changes, run:\n\n\n$ mkdocs serve\n\n\n\nTo build and publish the documentation, run:\n\n\n$ sh deploy_docs.sh \"Updating documentation\"\n\n\n\nTests\n\n\nThe Python unittest module contains its own test discovery function, which you can run from the command line:\n\n\n$ python -m unittest discover tests/", 
+            "text": "daftlistings enables programmatic interaction with \ndaft.ie\n\n\nInstallation\n\n\ndaftlistings is available on the \nPython Package Index (PyPI)\n.\n\n\nYou can install daftlistings using pip.\n\n\n$ virtualenv env\n$ source env/bin/activate\n$ pip install daftlistings\n\n\n\nUsage\n\n\nfrom daftlistings import Daft\n\ndaft = Daft()\n\nlistings = daft.get_listings()\n\nfor listing in listings:\n    print(listing.get_formalised_address())\n    print(listing.get_daft_link())\n    print(listing.get_price())\n    print(' ')\n\n\n\nfor more code examples, check out the \nexamples\n section.\n\n\nDocumentation\n\n\nThe documentation has been created using \nmkdocs\n and the \nmkdocs material theme\n. To update the documentation, clone the repository and edit the markdown files in the docs/ directory.\n\n\nTo view your changes, run:\n\n\n$ mkdocs serve\n\n\n\nTo build and publish the documentation, run:\n\n\n$ sh deploy_docs.sh \"Updating documentation\"\n\n\n\nTests\n\n\nThe Python unittest module contains its own test discovery function, which you can run from the command line:\n\n\n$ python -m unittest discover tests/\n\n\n\nContributing\n\n\n\n\nFork the project and clone locally.\n\n\nCreate a new branch for what you're going to work on.\n\n\nPush to your origin repository.\n\n\nCreate a new pull request in GitHub.", 
             "title": "Overview"
         }, 
         {
             "location": "/#installation", 
             "text": "daftlistings is available on the  Python Package Index (PyPI) .  You can install daftlistings using pip.  $ virtualenv env\n$ source env/bin/activate\n$ pip install daftlistings", 
             "title": "Installation"
+        }, 
+        {
+            "location": "/#usage", 
+            "text": "from daftlistings import Daft\n\ndaft = Daft()\n\nlistings = daft.get_listings()\n\nfor listing in listings:\n    print(listing.get_formalised_address())\n    print(listing.get_daft_link())\n    print(listing.get_price())\n    print(' ')  for more code examples, check out the  examples  section.", 
+            "title": "Usage"
         }, 
         {
             "location": "/#documentation", 
@@ -19,6 +24,11 @@
             "location": "/#tests", 
             "text": "The Python unittest module contains its own test discovery function, which you can run from the command line:  $ python -m unittest discover tests/", 
             "title": "Tests"
+        }, 
+        {
+            "location": "/#contributing", 
+            "text": "Fork the project and clone locally.  Create a new branch for what you're going to work on.  Push to your origin repository.  Create a new pull request in GitHub.", 
+            "title": "Contributing"
         }, 
         {
             "location": "/examples/", 

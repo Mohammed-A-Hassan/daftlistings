@@ -201,6 +201,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#usage" title="Usage" class="md-nav__link">
+    Usage
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#documentation" title="Documentation" class="md-nav__link">
     Documentation
   </a>
@@ -210,6 +217,13 @@
         <li class="md-nav__item">
   <a href="#tests" title="Tests" class="md-nav__link">
     Tests
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#contributing" title="Contributing" class="md-nav__link">
+    Contributing
   </a>
   
 </li>
@@ -359,6 +373,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#usage" title="Usage" class="md-nav__link">
+    Usage
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#documentation" title="Documentation" class="md-nav__link">
     Documentation
   </a>
@@ -368,6 +389,13 @@
         <li class="md-nav__item">
   <a href="#tests" title="Tests" class="md-nav__link">
     Tests
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#contributing" title="Contributing" class="md-nav__link">
+    Contributing
   </a>
   
 </li>
@@ -399,6 +427,20 @@
 $ source env/bin/activate
 $ pip install daftlistings
 </code></pre>
+<h2 id="usage">Usage</h2>
+<pre><code>from daftlistings import Daft
+
+daft = Daft()
+
+listings = daft.get_listings()
+
+for listing in listings:
+    print(listing.get_formalised_address())
+    print(listing.get_daft_link())
+    print(listing.get_price())
+    print(' ')
+</code></pre>
+<p>for more code examples, check out the <a href="examples/">examples</a> section.</p>
 <h2 id="documentation">Documentation</h2>
 <p>The documentation has been created using <a href="http://www.mkdocs.org/">mkdocs</a> and the <a href="https://squidfunk.github.io/mkdocs-material/">mkdocs material theme</a>. To update the documentation, clone the repository and edit the markdown files in the docs/ directory.</p>
 <p>To view your changes, run:</p>
@@ -411,6 +453,13 @@ $ pip install daftlistings
 <p>The Python unittest module contains its own test discovery function, which you can run from the command line:</p>
 <pre><code>$ python -m unittest discover tests/
 </code></pre>
+<h2 id="contributing">Contributing</h2>
+<ul>
+<li>Fork the project and clone locally.</li>
+<li>Create a new branch for what you're going to work on.</li>
+<li>Push to your origin repository.</li>
+<li>Create a new pull request in GitHub.</li>
+</ul>
                 
                   
                 
